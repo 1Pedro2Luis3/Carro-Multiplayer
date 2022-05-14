@@ -24,8 +24,8 @@ class Player{
       Update(){
         var playerIndex = "players/player"+this.indice;
         database.ref(playerIndex).set({
-          Name: this.nome,
-          Distancia: this.distancia
+          nome: this.nome,
+          distancia: this.distancia
         });
       } 
 

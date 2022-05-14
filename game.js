@@ -34,7 +34,11 @@ class Game{
       }
 
       Carro1 = createSprite(150,400);
+      Carro1.addImage("CarroBranco", Carro1_img);
+
       Carro2 = createSprite(350,400);
+      Carro2.addImage("CarroVermelho", Carro2_img);
+
       CarMatriz = [Carro1,Carro2];
     }
 
@@ -43,15 +47,19 @@ class Game{
       text("O jogo começou",100,100);
       Player.GetPlayerInfo();
       if(AllPlayers !== undefined){
-        var Y = 150;
+        //var Y = 150;
         var Index = 0;
-        var x;
+        var x = 200;
         var y;
+        background("#c68767");
+        image(Pista_Longa,0,-displayHeight*4,displayWidth,displayHeight*5);
         for(var plr in AllPlayers){
           Index+=1;
           x = x+200;
           y = displayHeight-AllPlayers[plr].distancia;
-          Y+=50;
+          CarMatriz[Index-1].x = x;
+          CarMatriz[Index-1].y = y;
+          //Y+=50;
         if(Index === player.indice){
           CarMatriz[Index-1].shapeColor = "red";
           camera.position.x = displayWidth/2;
@@ -59,11 +67,20 @@ class Game{
           }
         }
       }
-   
+      
       if(keyDown("up_arrow") && player.indice !== null){
         player.distancia += 15;
         player.Update();
       }
+
+      if(player.distancia >= 3650){
+         gameState = 2;
+      }
+
       drawSprites();
+    }
+
+    End(){
+      console.log("Fim do Jogo");
     }
 }

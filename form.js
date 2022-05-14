@@ -21,11 +21,11 @@ class Formulário{
             player.nome = this.Input.value();
             
             playerCount += 1;
+            player.indice = playerCount;
             player.UpdateCount(playerCount);
             player.Update();
-            player.indice = playerCount;
-
-            this.Tela_De_Carregamento.html("Olá "+player.nome+", aguarde os demais jogadores para uma melhor experiência");
+           
+            this.Tela_De_Carregamento.html("Olá "+player.nome+", aguarde os demais jogadores para uma melhor experiência...");
             this.Tela_De_Carregamento.position(displayWidth/2,displayHeight/2);
         });
     }

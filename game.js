@@ -85,5 +85,14 @@ class Game{
     End(){
       console.log("Fim do Jogo");
       console.log(player.classificacao);
+      swal({
+        title:,
+        text:,
+        imageUrl: 
+        "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/cup.png",
+        "https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Down_Sign_Emoji_Icon_ios10_grande.png",
+        imageSize: "100x100",
+        confirmButtonText: "Obrigado por jogar"
+      });
     }
 }
